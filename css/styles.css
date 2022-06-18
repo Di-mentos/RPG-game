@@ -1,0 +1,355 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+/*****LANGUAGE SCREEN************/
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  background: #fff;
+  z-index: 12;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.screen__title {
+  font: 40px/2 "Boogaloo", cursive;
+  color: #FFB83E;
+  text-shadow: 3px 3px 0px #000;
+}
+.screen__block {
+  width: 30%;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid #FFB83E;
+  border-radius: 50px;
+  background: #FFD7AC;
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 4px solid #F38686;
+  border-radius: 50%;
+  font: 40px/2 "Boogaloo", cursive;
+  color: #F38686;
+  text-shadow: 3px 3px 0px #000;
+  -webkit-box-shadow: 0px 0px 0px 3px #000;
+          box-shadow: 0px 0px 0px 3px #000;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.button:hover {
+  font-size: 45px;
+}
+
+/***GAME SCREEN*************/
+.wrapper {
+  min-height: 100vh;
+  padding: 70px 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: url(../images/battle-bg.jpg) no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+/***HEALTH BLOCKS******************/
+.general {
+  padding: 0 20px;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.general__interaction {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.general__health-block > *:not(:last-child) {
+  margin: 0 0 15px 0;
+}
+
+.block-item {
+  width: 350px;
+  height: 200px;
+  padding: 25px 0 0 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.block-item__name {
+  font: 25px/1 "Permanent Marker", cursive;
+  letter-spacing: 4px;
+  color: #fff;
+}
+.block-item__border-block {
+  width: 70%;
+  height: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 3px solid;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.block-item__border-block_lutiy {
+  border-color: #F47721;
+}
+.block-item__border-block_evstafiy {
+  border-color: #3FECE6;
+}
+.block-item__green {
+  background: -webkit-gradient(linear, left top, left bottom, from(#72E735), to(#4C9725));
+  background: linear-gradient(#72E735, #4C9725);
+}
+.block-item__darker {
+  background: -webkit-gradient(linear, left top, left bottom, from(#59AE2D), to(#3B761D));
+  background: linear-gradient(#59AE2D, #3B761D);
+}
+.block-item__red {
+  background: -webkit-gradient(linear, left top, left bottom, from(#F33131), to(#B82727));
+  background: linear-gradient(#F33131, #B82727);
+}
+
+.block-item > *:not(:last-child) {
+  margin: 0 0 10px 0;
+}
+
+.block-item__lutiy {
+  background: url("../images/dragon-2.jpg") left top/cover no-repeat;
+}
+
+.block-item__evstafiy {
+  background: url("../images/wizard.jpg") 35% center/130% no-repeat;
+}
+
+#health-lutiy, #health-evstafiy {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+}
+
+/******ACTIONS LIST********************/
+.actions__item, .general__item_title {
+  font: 30px/1 "Caveat", cursive;
+  color: #fff;
+}
+
+.general__inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0 0 0 30px;
+}
+.general__item_title {
+  font-size: 35px;
+}
+
+.actions {
+  margin: 0 0 0 27px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  list-style-type: decimal;
+}
+.actions__item {
+  padding: 0 13px 0 7px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  margin: 10px 0 0 0;
+}
+.actions__item:hover {
+  cursor: pointer;
+  border-color: #fff;
+}
+.actions__noSelection {
+  font: 20px/1 "Caveat", cursive;
+  color: #FF7861;
+}
+
+/***LOGS*****************/
+.field {
+  width: 28%;
+  padding: 0 20px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, rgba(255, 86, 0, 0.4)), to(transparent));
+  background: linear-gradient(rgba(255, 86, 0, 0.4) 40%, transparent 100%);
+  border-radius: 20px;
+  padding: 15px 10px 15px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.field__inner {
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.field__title {
+  font: 30px/0.6 "Caveat", cursive;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+}
+.field__title:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+  border-top: 2px dashed red;
+}
+.field__messages {
+  width: 100%;
+  height: 395px;
+  font: 15px/1.2 "Rubik", sans-serif;
+  letter-spacing: 2px;
+  color: #fff;
+  overflow: auto;
+}
+.field__messages > * {
+  margin: 10px 0 10px 0;
+}
+
+.messages__nameLutiy {
+  color: #FF4800;
+}
+.messages__nameEvstafiy {
+  color: #3FECE6;
+}
+.messages__moveName {
+  color: #6E7AFF;
+}
+.messages__damage:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  border-top: 2px dashed red;
+  margin: 11px 0 0 0;
+}
+.messages__winner {
+  font-weight: bold;
+  color: #edd31a;
+}

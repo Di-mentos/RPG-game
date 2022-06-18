@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/styles.css">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@700&family=Rubik:wght@400;500&family=Boogaloo&display=swap" rel="stylesheet">
+		<link rel="icon" type="image/png" href="images/icons/flaticon.png" sizes="32x32">
+	</head>
+	
+	<body>
+		<div class="screen">
+			<div class="screen__title">Choose a language of game</div>
+			<div class="screen__block">
+				<button class="screen__button-en button" id="EN">EN</button>
+				<button class="screen__button-ru button" id="RU">RU</button>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="general">
+				<div class="general__interaction">
+					<div class="general__health-block">
+						<div class="block-item block-item__lutiy">
+							<div class="block-item__name block-item__name_lutiy">Lutiy(Computer)</div>
+							<div class="block-item__border-block block-item__border-block_lutiy">
+								<div id="health-lutiy" class="block-item__green"></div>
+							</div>
+						</div>
+						<div class="block-item block-item__evstafiy">
+							<div class="block-item__name block-item__name_evstafiy">Evstafiy(Player)</div>
+							<div class="block-item__border-block block-item__border-block_evstafiy">
+								<div id="health-evstafiy" class="block-item__green"></div>
+							</div>
+						</div>
+					</div>
+					<div class="general__inputs">
+						<div class="general__item_title" id="item-title">На что способен Евстафий?</div>
+						<ul class="actions" id="actions-list">
+							<li class="actions__item">Удар боевым кадилом</li>
+							<li class="actions__item">Вертушка левой пяткой</li>
+							<li class="actions__item">Каноничный фаербол</li>
+							<li class="actions__item">Магический блок</li>
+						</ul>
+					</div>
+				</div>
+				<div class="field" id="log">
+					<div class="field__inner">
+						<div class="field__title" id="log-title">Лог битвы</div>
+						<div class="field__messages messages" id="message"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/language.js"></script>
+	</body>
+</html>

@@ -1,0 +1,264 @@
+@import "reset.scss";
+
+/*****LANGUAGE SCREEN************/
+.screen{
+	width: 100%;
+	min-height: 100vh;
+	position: fixed;
+	background: #fff;
+	z-index: 12;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	&__title{
+		font: 40px/2 "Boogaloo", cursive;
+		color: #FFB83E;
+		text-shadow: 3px 3px 0px #000;
+	}
+
+	&__block{
+		width: 30%;
+		height: 250px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 60px;
+		box-sizing: border-box;
+		border: 2px solid #FFB83E;
+		border-radius: 50px;
+		background: #FFD7AC;
+	}
+}
+
+.button{
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 4px solid #F38686;
+	border-radius: 50%;
+	font: 40px/2 "Boogaloo", cursive;
+	color: #F38686;
+	text-shadow: 3px 3px 0px #000;
+	box-shadow: 0px 0px 0px 3px #000;
+	transition: all 0.1s linear;
+}
+
+.button:hover{
+	font-size: 45px;
+}
+
+/***GAME SCREEN*************/
+.wrapper{
+	min-height: 100vh;
+	padding: 70px 30px;
+	box-sizing: border-box;
+	background: url(../images/battle-bg.jpg) no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+}
+
+/***HEALTH BLOCKS******************/
+.general{
+	padding: 0 20px;
+	border-radius: 30px;
+	display: flex;
+
+	&__interaction{
+		flex-grow: 1;
+		display: flex;
+	}
+
+	&__health-block > *:not(:last-child){
+		margin: 0 0 15px 0;
+	}
+}
+
+.block-item{
+	width: 350px;
+	height: 200px;
+	padding: 25px 0 0 30px;
+	border-radius: 20px;
+	overflow: hidden;
+	position: relative;
+
+	&__name{
+		font: 25px/1 "Permanent Marker", cursive;
+		letter-spacing: 4px;
+		color: #fff;
+	}
+
+	&__border-block{
+		width: 70%;
+		height: 30px;
+		box-sizing: border-box;
+		border: 3px solid;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	&__border-block_lutiy{
+		border-color: #F47721;
+	}
+
+	&__border-block_evstafiy{
+		border-color: #3FECE6;
+	}
+
+	&__green{
+		background: (linear-gradient(#72E735, #4C9725));
+	}
+
+	&__darker{
+		background: (linear-gradient(#59AE2D, #3B761D));
+	}
+
+	&__red{
+		background: (linear-gradient(#F33131, #B82727));
+	}
+}
+
+.block-item > *:not(:last-child){
+	margin: 0 0 10px 0;
+}
+
+.block-item__lutiy{
+	background: url("../images/dragon-2.jpg") left top/cover no-repeat;
+}
+
+.block-item__evstafiy{
+	background: url("../images/wizard.jpg") 35% center/130% no-repeat;
+}
+
+#health-lutiy, #health-evstafiy{
+	width: 100%;
+	height: 100%;
+	transform-origin: left;
+	transition: all 1s linear;
+}
+
+/******ACTIONS LIST********************/
+%textItems{
+	font: 30px/1 "Caveat", cursive;
+	color: #fff;
+}
+
+.general{
+	&__inputs{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		padding: 0 0 0 30px
+	}
+
+	&__item_title{
+		@extend %textItems;
+		font-size: 35px;
+	}
+}
+
+.actions{
+	margin: 0 0 0 27px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	list-style-type: decimal;
+
+	&__item{
+		@extend %textItems;
+		padding: 0 13px 0 7px;
+		border: 2px solid transparent;
+		border-radius: 10px;
+		transition: all 0.25s ease;
+		margin: 10px 0 0 0;
+	}
+
+	&__item:hover{
+		cursor: pointer;
+		border-color: #fff;
+	}
+
+	&__noSelection{
+		font: 20px/1 "Caveat", cursive;
+		color: #FF7861;
+	}
+}
+
+/***LOGS*****************/
+.field{
+	width: 28%;
+	padding: 0 20px 0 0;
+	display: flex;
+	justify-content: flex-end;
+	background: linear-gradient(rgba(255, 86, 0, 0.4) 40%, transparent 100%);
+	border-radius: 20px;
+	padding: 15px 10px 15px 10px;
+	box-sizing: border-box;
+
+	&__inner{
+		height: 100%;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title{
+		font: 30px/0.6 "Caveat", cursive;
+		letter-spacing: 1px;
+		color: #fff;
+		text-align: center;
+	}
+
+	&__title:after{
+		content: "";
+		width: 100%;
+		height: 2px;
+		display: inline-block;
+		border-top: 2px dashed red;
+	}
+
+	&__messages{
+		width: 100%;
+		height: 395px;
+		font: 15px/1.2 "Rubik", sans-serif;
+		letter-spacing: 2px;
+		color: #fff;
+		overflow: auto;
+	}
+
+	&__messages > *{
+		margin: 10px 0 10px 0;
+	}
+}
+
+.messages{
+	&__nameLutiy{
+		color: #FF4800;
+	}
+
+	&__nameEvstafiy{
+		color: #3FECE6;
+	}
+
+	&__moveName{
+		color: #6E7AFF;
+	}
+
+	&__damage:after{
+		content: "";
+		display: inline-block;
+		width: 100%;
+		height: 2px;
+		border-top: 2px dashed red;
+		margin: 11px 0 0 0;
+	}
+
+	&__winner{
+		font-weight: bold;
+		color: #edd31a;
+	}
+}
